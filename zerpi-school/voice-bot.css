@@ -24,8 +24,8 @@
    ========================================================================== */
 .child-robot-launcher {
   position: fixed;
-  bottom: 18px;
-  right: 18px;
+  bottom: 22px;
+  right: 22px;
   z-index: 99999;
   cursor: pointer;
   outline: none;
@@ -552,21 +552,21 @@
   transform: scale(1.06);
 }
 
-/* Responsive adjustment for small screens */
-@media (max-width: 480px) {
+/* Responsive adjustment for small screens (positioned nicely above Netlify floating badges & toolbars) */
+@media (max-width: 768px) {
   .child-robot-launcher {
-    bottom: 12px;
-    right: 12px;
+    bottom: 78px;
+    right: 18px;
   }
   .child-robot-svg-wrap {
     width: 66px;
     height: 74px;
   }
   .school-bot-window {
-    bottom: 70px;
-    right: 10px;
-    width: calc(100vw - 20px);
-    height: calc(100vh - 90px);
+    bottom: 80px;
+    right: 12px;
+    width: min(348px, calc(100vw - 24px));
+    height: min(480px, calc(100dvh - 100px));
     border-radius: 18px;
   }
 }

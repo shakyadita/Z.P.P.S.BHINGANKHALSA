@@ -23,6 +23,8 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
+  width: 100%;
 }
 
 body {
@@ -30,13 +32,16 @@ body {
   font-family: Arial, Helvetica, sans-serif;
   background: var(--school-light);
   color: var(--school-navy);
-  overflow-x: clip;
+  overflow-x: hidden !important;
+  width: 100%;
+  max-width: 100vw;
+  position: relative;
 }
 
-@supports not (overflow-x: clip) {
-  body {
-    overflow-x: hidden;
-  }
+main {
+  overflow-x: hidden;
+  width: 100%;
+  max-width: 100vw;
 }
 
 button,
@@ -2136,6 +2141,7 @@ html {
   border-radius: 36px 36px 0 0;
   box-shadow: 0 -22px 60px rgba(8, 45, 69, 0.16);
   margin-top: -24px;
+  overflow: hidden;
 }
 
 .school-intro .intro-photo-wrap {

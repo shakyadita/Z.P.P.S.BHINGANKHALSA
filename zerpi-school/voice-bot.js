@@ -15,14 +15,14 @@
       id: 'timing',
       keywords_en: ['time', 'timing', 'timings', 'hours', 'open', 'close', 'schedule', 'holiday', 'sunday', 'saturday', 'when does school start', 'closing time'],
       keywords_mr: ['वेळ', 'कधी भरते', 'कधी सुटते', 'शाळेची वेळ', 'सुट्टी', 'रविवार', 'शनिवार', 'तासिका', 'टाइम'],
-      answer_en: 'School timings are from 10:00 AM to 4:00 PM, Monday through Saturday. The school is closed on Sundays and official government holidays.',
-      answer_mr: 'शाळेची वेळ सोमवार ते शनिवार सकाळी १०:०० ते दुपारी ४:०० अशी आहे. दर रविवारी आणि शासकीय सुट्टीच्या दिवशी शाळा बंद असते.'
+      answer_en: 'School timings are from 10:00 AM to 5:00 PM, Monday through Saturday. The school is closed on Sundays and official government holidays.',
+      answer_mr: 'शाळेची वेळ सोमवार ते शनिवार सकाळी १०:०० ते संध्याकाळी ५:०० अशी आहे. दर रविवारी आणि शासकीय सुट्टीच्या दिवशी शाळा बंद असते.'
     },
     {
       id: 'admission',
       keywords_en: ['admission', 'admissions', 'enroll', 'enrollment', 'register', 'fees', 'fee', 'cost', 'documents', 'free', 'process', 'how to join'],
       keywords_mr: ['प्रवेश', 'ऍडमिशन', 'दाखला', 'कागदपत्रे', 'कागदपत्र', 'नाव नोंदणी', 'फी', 'मोफत', 'वयोमर्यादा'],
-      answer_en: 'Education at Z.P.P.S. Bhingankhalsa is 100% free under the Right to Education (RTE)! Required documents: Child\'s Birth Certificate, Aadhaar Card, and passport-size photographs. Please visit the school office during school hours (10 AM to 4 PM) to enroll.',
+      answer_en: 'Education at Z.P.P.S. Bhingankhalsa is 100% free under the Right to Education (RTE)! Required documents: Child\'s Birth Certificate, Aadhaar Card, and passport-size photographs. Please visit the school office during school hours (10 AM to 5 PM) to enroll.',
       answer_mr: 'झेड.पी. प्राथमिक शाळा भिंगाण खालसा येथे शिक्षण पूर्णपणे मोफत आहे! प्रवेशासाठी विद्यार्थ्याचे आधार कार्ड, जन्म दाखला व पालकांचे छायाचित्र आवश्यक आहे. अधिक माहितीसाठी शाळेत संपर्क साधावा.'
     },
     {
@@ -98,8 +98,8 @@
   ];
 
   // Fallbacks
-  const FALLBACK_EN = 'I\'m sorry, I don\'t have specific details on that question. Please visit our school between 10:00 AM and 4:00 PM to speak with Headmistress Mrs. Lokhande or Teacher Mr. Bhujbal, or tap one of the suggested topics below.';
-  const FALLBACK_MR = 'माफ करा, या प्रश्नाबद्दल मला पूर्ण माहिती नाही. कृपया शाळेत सकाळी १० ते ४ या वेळेत मुख्याध्यापिका सौ. लोखंडे मॅडम किंवा भुजबळ सर यांच्याशी संपर्क साधा.';
+  const FALLBACK_EN = 'I\'m sorry, I don\'t have specific details on that question. Please visit our school between 10:00 AM and 5:00 PM to speak with Headmistress Mrs. Lokhande or Teacher Mr. Bhujbal, or tap one of the suggested topics below.';
+  const FALLBACK_MR = 'माफ करा, या प्रश्नाबद्दल मला पूर्ण माहिती नाही. कृपया शाळेत सकाळी १० ते ५ या वेळेत मुख्याध्यापिका सौ. लोखंडे मॅडम किंवा भुजबळ सर यांच्याशी संपर्क साधा.';
 
   // State: Default to English ('en')
   let currentLang = 'en';

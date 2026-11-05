@@ -966,3 +966,14 @@
   }
 }
 
+.activity-card,
+.extra-grid {
+  opacity: 1 !important;
+}
+
+.activity-card-media img {
+  opacity: 1 !important;
+  filter: contrast(1.12) brightness(0.96) saturate(1.18);
+}
+
+

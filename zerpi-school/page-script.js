@@ -111,7 +111,7 @@
   }
 
   const targets = document.querySelectorAll(
-    '.extra-grid, .features-grid, .faq-category, .inner-coming-soon-inner, .extra-quote-banner'
+    '.features-grid, .faq-category, .inner-coming-soon-inner, .extra-quote-banner'
   );
 
   targets.forEach((target) => {
