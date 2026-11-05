@@ -1,0 +1,931 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Discover Extra Curriculum Activities at Z.P.P.S. Bhingankhalsa — sports, singing, dancing, hands-on craft making, organic gardening, self-learning, digital skills, and compassionate community values.">
+  <title>Extra Curriculum Activities | Z.P.P.S. Bhingankhalsa</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="page-styles.css">
+  <link rel="stylesheet" href="voice-bot.css">
+  <script src="page-script.js" defer></script>
+  <script src="voice-bot.js" defer></script>
+
+  <style>
+    /* =========================================
+       EXTRA CURRICULAR PAGE THEME STYLES
+       Unified with school palette:
+       Navy (#082d45), Sky (#ddf2fa), Blue (#348fc5),
+       Light (#f7fbfe), Yellow (#ffdc79)
+    ========================================= */
+
+    /* --- HERO BANNER --- */
+    .extra-hero {
+      position: relative;
+      background: linear-gradient(135deg, rgba(7, 35, 56, 0.94) 0%, rgba(13, 58, 90, 0.90) 50%, rgba(17, 76, 119, 0.86) 100%),
+                  url('assets/group.jpg') center 30% / cover no-repeat;
+      color: white;
+      padding: clamp(65px, 9vh, 105px) 6% clamp(55px, 7vh, 85px);
+      overflow: hidden;
+      border-bottom: 1px solid rgba(255, 255, 255, .1);
+    }
+
+    .extra-hero-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+
+    .extra-hero-kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: var(--school-yellow);
+      margin-bottom: 16px;
+    }
+
+    .extra-hero-kicker span {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: #ffdc79;
+      box-shadow: 0 0 12px #ffdc79;
+    }
+
+    .extra-hero h1 {
+      font-size: clamp(34px, 5.2vw, 58px);
+      line-height: 1.15;
+      font-weight: 800;
+      letter-spacing: -.02em;
+      margin: 0 0 20px;
+      max-width: 860px;
+    }
+
+    .extra-hero h1 em {
+      font-style: italic;
+      color: var(--school-yellow);
+    }
+
+    .extra-hero p.lead {
+      font-size: clamp(16px, 1.8vw, 19px);
+      line-height: 1.7;
+      color: #cde4f2;
+      max-width: 780px;
+      margin: 0 0 32px;
+    }
+
+    .extra-stats-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 28px;
+      padding-top: 24px;
+      border-top: 1px solid rgba(255, 255, 255, .18);
+    }
+
+    .extra-stat {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .extra-stat strong {
+      font-size: 26px;
+      font-weight: 800;
+      color: white;
+      line-height: 1.1;
+    }
+
+    .extra-stat span {
+      font-size: 11px;
+      color: #92c5de;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      margin-top: 4px;
+    }
+
+    /* --- ACTIVITIES LISTING --- */
+    .extra-content-section {
+      padding: 60px 6% 90px;
+      background: #f7fbfe;
+    }
+
+    .extra-grid {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 46px;
+    }
+
+    .activity-card {
+      background: white;
+      border-radius: 24px;
+      overflow: hidden;
+      box-shadow: 0 10px 32px rgba(8, 45, 69, .06);
+      border: 1px solid #e1eff6;
+      display: grid;
+      grid-template-columns: 1fr 1.15fr;
+      transition: transform .3s ease, box-shadow .3s ease;
+    }
+
+    .activity-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 20px 45px rgba(8, 45, 69, .12);
+    }
+
+    @media (max-width: 900px) {
+      .activity-card {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .activity-card-media {
+      position: relative;
+      min-height: 320px;
+      background: #09273c;
+      overflow: hidden;
+    }
+
+    .activity-card-media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform .5s ease;
+      display: block;
+    }
+
+    .activity-card:hover .activity-card-media img {
+      transform: scale(1.04);
+    }
+
+    .activity-card-body {
+      padding: clamp(28px, 4vw, 42px);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .activity-card-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      margin-bottom: 16px;
+      flex-wrap: wrap;
+    }
+
+    .activity-icon-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 11px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: .12em;
+      color: #348fc5;
+      background: #eaf5fc;
+      padding: 6px 14px;
+      border-radius: 20px;
+    }
+
+    .activity-icon-pill svg {
+      width: 18px;
+      height: 18px;
+      stroke: currentColor;
+      fill: none;
+      stroke-width: 2;
+    }
+
+    .activity-grade-tag {
+      font-size: 11px;
+      font-weight: 700;
+      color: #176840;
+      background: #d8f5e5;
+      padding: 4px 10px;
+      border-radius: 12px;
+    }
+
+    .activity-card-body h3 {
+      font-size: clamp(23px, 2.5vw, 30px);
+      font-weight: 800;
+      color: var(--school-navy);
+      line-height: 1.2;
+      margin: 0 0 6px;
+    }
+
+    .activity-marathi-title {
+      font-size: 14px;
+      font-weight: 700;
+      color: #427592;
+      margin: 0 0 16px;
+    }
+
+    .activity-card-body p.activity-lead {
+      font-size: 15px;
+      line-height: 1.68;
+      color: #476579;
+      margin: 0 0 20px;
+    }
+
+    .activity-highlights {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-bottom: 22px;
+      padding: 16px 20px;
+      background: #f2f8fc;
+      border-radius: 14px;
+      border-left: 3px solid #348fc5;
+    }
+
+    .activity-hl-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 13px;
+      color: var(--school-navy);
+      line-height: 1.5;
+    }
+
+    .activity-hl-item svg {
+      width: 16px;
+      height: 16px;
+      stroke: #348fc5;
+      fill: none;
+      stroke-width: 2.5;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .activity-skills-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .activity-skill-chip {
+      font-size: 11px;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: 12px;
+      background: #e5f1f8;
+      color: var(--school-navy);
+      border: 1px solid #d4e7f1;
+    }
+
+    /* --- COMMUNITY VALUES & EDUCATORS BANNER --- */
+    .extra-quote-banner {
+      background: linear-gradient(135deg, var(--school-navy) 0%, #0d3857 100%);
+      color: white;
+      border-radius: 24px;
+      padding: clamp(36px, 5vw, 60px);
+      margin-top: 40px;
+      position: relative;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, .15);
+      box-shadow: 0 20px 48px rgba(8, 45, 69, .15);
+    }
+
+    .extra-quote-inner {
+      max-width: 900px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .extra-quote-banner h3 {
+      font-size: clamp(22px, 3vw, 34px);
+      margin: 12px 0 16px;
+      color: white;
+      line-height: 1.3;
+    }
+
+    .extra-quote-banner p {
+      font-size: 15px;
+      line-height: 1.7;
+      color: #c9e0ee;
+      margin: 0 0 24px;
+    }
+  </style>
+</head>
+
+<body class="inner-page">
+
+  <!-- NAVBAR -->
+  <header class="page-navbar">
+    <a class="brand" href="index.html">
+      <img src="assets/school-logo.png" class="brand-logo" alt="Zilla Parishad emblem" width="60" height="60">
+      <span class="brand-name">Z.P.P.S. Bhingankhalsa</span>
+    </a>
+
+    <a class="page-back-link" href="index.html">
+      ← Back to Home
+    </a>
+
+    <!-- HAMBURGER MENU BUTTON -->
+    <button class="menu-toggle" id="menuToggle" type="button" aria-label="Open navigation menu" aria-expanded="false"
+      aria-controls="siteMenu">
+      <span class="menu-bar"></span>
+      <span class="menu-bar"></span>
+      <span class="menu-bar"></span>
+    </button>
+  </header>
+
+  <!-- SLIDE-OUT NAVIGATION MENU -->
+  <nav class="site-menu" id="siteMenu" aria-label="Site navigation">
+    <div class="site-menu-inner">
+
+      <div class="site-menu-header">
+        <span class="site-menu-school">Z.P.P.S. Bhingankhalsa</span>
+        <button class="site-menu-close" id="menuClose" type="button" aria-label="Close menu">✕</button>
+      </div>
+
+      <ul class="site-menu-list">
+        <li><a href="about.html" class="site-menu-link">About Our School</a></li>
+        <li><a href="extra-curriculum.html" class="site-menu-link">Extra Curriculum</a></li>
+        <li><a href="calendar.html" class="site-menu-link">Calendar</a></li>
+        <li><a href="features.html" class="site-menu-link">Features</a></li>
+        <li><a href="faq.html" class="site-menu-link">F &amp; Q</a></li>
+      </ul>
+
+      <div class="site-menu-footer">
+        <div class="site-menu-meta">
+          <span>Standards 1 to 4 · Marathi &amp; English</span>
+          <span>10:00 AM – 4:00 PM · Ahilyanagar</span>
+        </div>
+      </div>
+
+    </div>
+  </nav>
+
+  <main>
+
+    <!-- HERO SECTION -->
+    <section class="extra-hero">
+      <div class="extra-hero-inner">
+        <div class="extra-hero-kicker">
+          <span></span>
+          The Heart of Our School · सहशालेय उपक्रम
+        </div>
+
+        <h1>
+          Where Childhood Comes Alive<br>
+          Through <em>Passions &amp; Play.</em>
+        </h1>
+
+        <p class="lead">
+          At Z.P.P.S. Bhingankhalsa, learning doesn’t end when the books close. Our students are natural
+          athletes, joyful singers, expressive dancers, curious makers, organic gardeners, independent learners,
+          digital explorers, and compassionate friends.
+        </p>
+
+        <div class="extra-stats-bar">
+          <div class="extra-stat">
+            <strong>10+</strong>
+            <span>Active Curricular Domains</span>
+          </div>
+          <div class="extra-stat">
+            <strong>100%</strong>
+            <span>Student Participation</span>
+          </div>
+          <div class="extra-stat">
+            <strong>Daily</strong>
+            <span>Sports, Music &amp; Creative Time</span>
+          </div>
+          <div class="extra-stat">
+            <strong>All Grades</strong>
+            <span>Inclusive Learning (Std 1–4)</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ACTIVITIES LISTING -->
+    <section class="extra-content-section">
+      <div class="extra-grid">
+
+        <!-- 1. SPORTS & ATHLETICS -->
+        <article class="activity-card" data-category="sports">
+          <div class="activity-card-media">
+            <img src="assets/PLAYGROUND.jpeg" alt="Students playing outdoor sports at Bhingankhalsa" loading="lazy">
+          </div>
+          <div class="activity-card-body">
+            <div class="activity-card-header">
+              <span class="activity-icon-pill">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="5" r="3"/><path d="m9 20 3-6 4 2 2-5"/><path d="m6 13 3-2 3 2v7"/><path d="M4 17l3-3"/></svg>
+                Sports &amp; Physical Fitness
+              </span>
+              <span class="activity-grade-tag">All Grades</span>
+            </div>
+            <h3>Champions on the Playground</h3>
+            <p class="activity-marathi-title">खेळ, मैदानी स्पर्धा व शारीरिक शिक्षण (Sports &amp; Games)</p>
+            <p class="activity-lead">
+              Every afternoon, our spacious ground echoes with cheering and boundless energy! Our children
+              excel in traditional Indian sports and athletics, building speed, stamina, and team spirit.
+            </p>
+            <div class="activity-highlights">
+              <div class="activity-hl-item">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                <span><strong>Traditional Games:</strong> Kabaddi (कबड्डी), Kho-Kho (खो-खो), Langadi, and ring tennis.</span>
+              </div>
+              <div class="activity-hl-item">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                <span><strong>Athletics &amp; Drills:</strong> Sprint relays, high jumps, lemon-spoon coordination, and daily morning PT drills.</span>
+              </div>
+            </div>
+            <div class="activity-skills-row">
+              <span class="activity-skill-chip">Physical Stamina</span>
+              <span class="activity-skill-chip">Teamwork &amp; Strategy</span>
+              <span class="activity-skill-chip">Sportsmanship</span>
+              <span class="activity-skill-chip">Agility</span>
+            </div>
+          </div>
+        </article>
+
+
+        <!-- 2. SINGING & MUSIC -->
+        <article class="activity-card" data-category="music">
+          <div class="activity-card-media">
+            <img src="assets/group.jpg" alt="Students singing morning prayers and chorus" loading="lazy">
+          </div>
+          <div class="activity-card-body">
+            <div class="activity-card-header">
+              <span class="activity-icon-pill">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
+                Singing &amp; Performing Voice
+              </span>
+              <span class="activity-grade-tag">All Grades</span>
+            </div>
+            <h3>Melodies from the Heart</h3>
+            <p class="activity-marathi-title">सुस्वर गायन, परिपाठ व समूहगीते (Singing &amp; Vocal Harmony)</p>
+            <p class="activity-lead">
+              Our students possess a natural gift for melody and rhythm. From the solemn harmony of the daily
+              morning assembly to stirring patriotic hymns and Marathi poetry recitations, their voices resonate
+              with joyful emotion.
+            </p>
+            <div class="activity-highlights">
+              <div class="activity-hl-item">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                <span><strong>Morning Assembly (परिपाठ):</strong> Daily soulful prayer songs, thought of the day, pledge, and national anthem.</span>
+              </div>
+              <div class="activity-hl-item">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                <span><strong>Patriotic &amp; Folk Songs:</strong> Special choral singing for Republic Day, Independence Day, and Maharashtra Din.</span>
+              </div>
+            </div>
+            <div class="activity-skills-row">
+              <span class="activity-skill-chip">Vocal Confidence</span>
+              <span class="activity-skill-chip">Poetic Memory</span>
+              <span class="activity-skill-chip">Rhythm &amp; Pitch</span>
+              <span class="activity-skill-chip">Stage Poise</span>
+            </div>
+          </div>
+        </article>
+
+
+        <!-- 3. DANCE & FOLK PERFORMANCES -->
+        <article class="activity-card" data-category="dance">
+          <div class="activity-card-media">
+            <img src="assets/dance-performance.jpg" alt="Children performing cultural dance in traditional attire" loading="lazy">
+          </div>
+          <div class="activity-card-body">
+            <div class="activity-card-header">
+              <span class="activity-icon-pill">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m18 8 4 4-4 4"/><path d="M2 12h20"/><path d="m6 8-4 4 4 4"/></svg>
+                Dance &amp; Cultural Expressions
+              </span>
+              <span class="activity-grade-tag">Annual Gathering</span>
+            </div>
+            <h3>Grace, Rhythm &amp; Village Heritage</h3>
+            <p class="activity-marathi-title">पारंपारिक नृत्य, लेझीम व सांस्कृतिक कार्यक्रम (Folk Dance &amp; Lezim)</p>
+            <p class="activity-lead">
+              Dance at Bhingankhalsa is a vibrant celebration of Maharashtrian heritage! The children master
+              synchronized Lezim formations, lively folk dances, and colorful stage dramas that bring the entire
+              village together during our Annual Gathering (*स्नेहसंमेलन*).
+            </p>
+            <div class="activity-highlights">
+              <div class="activity-hl-item">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                <span><strong>Rhythmic Lezim (लेझीम पथक):</strong> Synchronized metal-jingle drills that teach precision, timing, and pride.</span>
+              </div>
+              <div class="activity-hl-item">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                <span><strong>Cultural Celebrations:</strong> Chhatrapati Shivaji Maharaj Jayanti, Ganesh Utsav, and festive performances.</span>
+              </div>
+            </div>
+            <div class="activity-skills-row">
+              <span class="activity-skill-chip">Body Coordination</span>
+              <span class="activity-skill-chip">Cultural Heritage</span>
+              <span class="activity-skill-chip">Stage Confidence</span>
+              <span class="activity-skill-chip">Joyful Expression</span>
+            </div>
+          </div>
+        </article>
+
+
+        <!-- 4. ART, CRAFT & MAKING THINGS -->
+        <article class="activity-card" data-category="crafts">
+          <div class="activity-card-media">
+            <img src="assets/prelim.jpg" alt="Children engaged in hands-on creative learning and making things" loading="lazy">
+          </div>
+          <div class="activity-card-body">
+            <div class="activity-card-header">
+              <span class="activity-icon-pill">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3-1.9 5.8a2 2 0 0 1-1.3 1.3L3 12l5.8 1.9a2 2 0 0 1 1.3 1.3L12 21l1.9-5.8a2 2 0 0 1 1.3-1.3L21 12l-5.8-1.9a2 2 0 0 1-1.3-1.3Z"/></svg>
+                Hands-On Art &amp; Craft
+              </span>
+              <span class="activity-grade-tag">Creative Tinkering</span>
+            </div>
+            <h3>Young Makers &amp; Tactile Innovators</h3>
+            <p class="activity-marathi-title">हस्तकला, चित्रकला, मातीकाम आणि वस्तू निर्मिती (Art &amp; Making Things)</p>
+            <p class="activity-lead">
+              Give our students clay, discarded paper, or colors, and they will build wonders! They are passionate
+              makers who love shaping raw clay into animals and pots, folding complex paper origami, and crafting
+              working science toys out of recyclable materials.
+            </p>
+            <div class="activity-highlights">
+              <div class="activity-hl-item">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                <span><strong>Clay Sculpting (मातीकाम):</strong> Shaping organic soil and clay into traditional diyas, toys, and figurines.</span>
+              </div>
+              <div class="activity-hl-item">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                <span><strong>Recycled Art &amp; Origami:</strong> Paper boats, greeting cards, wall hangings, and "Best from Waste" projects.</span>
+              </div>
+            </div>
+            <div class="activity-skills-row">
+              <span class="activity-skill-chip">Fine Motor Skills</span>
+              <span class="activity-skill-chip">Spatial Thinking</span>
+              <span class="activity-skill-chip">Resourcefulness</span>
+              <span class="activity-skill-chip">Originality</span>
+            </div>
+          </div>
+        </article>
+
+
+        <!-- 5. CAMPUS ECO-GARDENING -->
+        <article class="activity-card" data-category="garden">
+          <div class="activity-card-media">
+            <img src="assets/VEGITABLE GARDEN.jpeg" alt="Students tending organic kitchen garden and flowers" loading="lazy">
+          </div>
+          <div class="activity-card-body">
+            <div class="activity-card-header">
+              <span class="activity-icon-pill">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/></svg>
+                Environmental Stewardship
+              </span>
+              <span class="activity-grade-tag">Nature Care</span>
+            </div>
+            <h3>Green Thumbs &amp; Nature Keepers</h3>
+            <p class="activity-marathi-title">शालेय पोषण बाग, वृक्षारोपण व निसर्ग संवर्धन (Organic Gardening)</p>
+            <p class="activity-lead">
+              Our organic flower and vegetable garden is lovingly tended by the students themselves. From planting
+              seeds and weeding to harvesting fresh greens for our mid-day meal kitchen, children learn botany,
+              patience, and an enduring respect for mother earth.
+            </p>
+            <div class="activity-highlights">
+              <div class="activity-hl-item">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                <span><strong>Farm-to-Plate Learning:</strong> Students see their sown seeds grow into nutritious vegetables served at lunch.</span>
+              </div>
+              <div class="activity-hl-item">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                <span><strong>Tree Plantation (वृक्षारोपण):</strong> Every child adopts and cares for a flowering plant on campus.</span>
+              </div>
+            </div>
+            <div class="activity-skills-row">
+              <span class="activity-skill-chip">Environmental Care</span>
+              <span class="activity-skill-chip">Patience &amp; Diligence</span>
+              <span class="activity-skill-chip">Botanical Science</span>
+              <span class="activity-skill-chip">Nutrition Awareness</span>
+            </div>
+          </div>
+        </article>
+
+
+        <!-- 6. SELF-DIRECTED LEARNING & CURIOSITY -->
+        <article class="activity-card" data-category="learning">
+          <div class="activity-card-media">
+            <img src="assets/smart board.png" alt="Children exploring smart board and books independently" loading="lazy">
+          </div>
+          <div class="activity-card-body">
+            <div class="activity-card-header">
+              <span class="activity-icon-pill">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-1 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5"/><path d="M9 18h6"/><path d="M10 22h4"/></svg>
+                Independent Thinking
+              </span>
+              <span class="activity-grade-tag">Lifelong Skill</span>
+            </div>
+            <h3>Inquisitive, Self-Directed Learners</h3>
+            <p class="activity-marathi-title">स्वयं-अध्ययन, डिजिटल शोध आणि जिज्ञासा (Self-Learning &amp; Curiosity)</p>
+            <p class="activity-lead">
+              We empower children to discover answers for themselves! In our cozy reading corners and smart
+              classroom sessions, students lead their own discussions, mentor younger peers, and ask deep questions
+              that spark independent research.
+            </p>
+            <div class="activity-highlights">
+              <div class="activity-hl-item">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                <span><strong>Peer Mentoring:</strong> Standard 3 &amp; 4 students patiently guiding 1st graders with reading flashcards.</span>
+              </div>
+              <div class="activity-hl-item">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                <span><strong>Audio-Visual Discovery:</strong> Exploring science animations, interactive math puzzles, and educational videos.</span>
+              </div>
+            </div>
+            <div class="activity-skills-row">
+              <span class="activity-skill-chip">Curiosity</span>
+              <span class="activity-skill-chip">Critical Thinking</span>
+              <span class="activity-skill-chip">Autonomous Study</span>
+              <span class="activity-skill-chip">Problem-Solving</span>
+            </div>
+          </div>
+        </article>
+
+
+        <!-- 7. DIGITAL SKILLS & COMPUTER LITERACY -->
+        <article class="activity-card" data-category="learning">
+          <div class="activity-card-media">
+            <img src="assets/computer.png" alt="Students exploring computers and digital learning tools" loading="lazy">
+          </div>
+          <div class="activity-card-body">
+            <div class="activity-card-header">
+              <span class="activity-icon-pill">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><rect width="20" height="14" x="2" y="3" rx="2"/><line x1="8" x2="16" y1="21" y2="21"/><line x1="12" x2="12" y1="17" y2="21"/></svg>
+                Digital Literacy &amp; Computing
+              </span>
+              <span class="activity-grade-tag">Modern Foundations</span>
+            </div>
+            <h3>Young Digital Explorers</h3>
+            <p class="activity-marathi-title">संगणक साक्षरता, टायपिंग व डिजिटल ज्ञान (Computer Learning)</p>
+            <p class="activity-lead">
+              Guided by teacher Mr. Bhujbal, our students get hands-on keyboard and mouse experience from an
+              early age. They practice bilingual typing in Marathi and English, solve digital arithmetic drills,
+              and build fearless digital confidence.
+            </p>
+            <div class="activity-highlights">
+              <div class="activity-hl-item">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                <span><strong>Hands-On Practice:</strong> Mouse control, keyboard typing games, and navigating educational learning tools.</span>
+              </div>
+              <div class="activity-hl-item">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                <span><strong>Interactive Learning:</strong> Digital math tables, spellings, and foundational technology awareness.</span>
+              </div>
+            </div>
+            <div class="activity-skills-row">
+              <span class="activity-skill-chip">Digital Literacy</span>
+              <span class="activity-skill-chip">Bilingual Typing</span>
+              <span class="activity-skill-chip">Tech Confidence</span>
+              <span class="activity-skill-chip">Logical Thinking</span>
+            </div>
+          </div>
+        </article>
+
+
+        <!-- 8. READING CLUB & STORYTELLING -->
+        <article class="activity-card" data-category="learning">
+          <div class="activity-card-media">
+            <img src="assets/reading corner.png" alt="Children reading illustrated storybooks in the reading corner" loading="lazy">
+          </div>
+          <div class="activity-card-body">
+            <div class="activity-card-header">
+              <span class="activity-icon-pill">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+                Reading Culture &amp; Storytelling
+              </span>
+              <span class="activity-grade-tag">Lifelong Habit</span>
+            </div>
+            <h3>Storytellers &amp; Book Lovers</h3>
+            <p class="activity-marathi-title">वाचन कोपरा, गोष्ट सांगणे व बालसाहित्य (Reading &amp; Storytelling)</p>
+            <p class="activity-lead">
+              Our cozy reading corner is always buzzing with curious little readers! Students take turns narrating
+              folk tales from Maharashtra, reading illustrated Marathi books aloud, and performing imaginative
+              story dramatizations in front of their classmates.
+            </p>
+            <div class="activity-highlights">
+              <div class="activity-hl-item">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                <span><strong>Daily Reading Time (वाचन वेळ):</strong> Dedicated independent and group reading from our bilingual library.</span>
+              </div>
+              <div class="activity-hl-item">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                <span><strong>Oral Storytelling:</strong> Children dramatize folk tales, moral fables, and creative stories before their peers.</span>
+              </div>
+            </div>
+            <div class="activity-skills-row">
+              <span class="activity-skill-chip">Reading Fluency</span>
+              <span class="activity-skill-chip">Imagination</span>
+              <span class="activity-skill-chip">Oral Expression</span>
+              <span class="activity-skill-chip">Vocabulary</span>
+            </div>
+          </div>
+        </article>
+
+
+        <!-- 9. COMPASSION, EMPATHY & COMMUNITY VALUES -->
+        <article class="activity-card" data-category="values">
+          <div class="activity-card-media">
+            <img src="assets/handwashing.jpg" alt="Students demonstrating kindness, hygiene, and mutual care" loading="lazy">
+          </div>
+          <div class="activity-card-body">
+            <div class="activity-card-header">
+              <span class="activity-icon-pill">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
+                Character &amp; Empathy
+              </span>
+              <span class="activity-grade-tag">Core Value</span>
+            </div>
+            <h3>Compassionate Hearts &amp; Shared Care</h3>
+            <p class="activity-marathi-title">सहानुभूती, दयाळूपणा आणि सहकार्य (Compassion &amp; Community Spirit)</p>
+            <p class="activity-lead">
+              The true hallmark of our school is how deeply our students care for one another. Whether it’s
+              holding hands at the washbasin, helping a younger child tie their shoelaces, or organizing campus
+              cleanliness drives (*स्वच्छता मोहीम*), kindness is woven into everything they do.
+            </p>
+            <div class="activity-highlights">
+              <div class="activity-hl-item">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                <span><strong>Mutual Kindness:</strong> Senior students guiding junior classmates with warmth, patience, and smiles.</span>
+              </div>
+              <div class="activity-hl-item">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                <span><strong>Swachhata &amp; Respect:</strong> Taking shared responsibility for clean classrooms, desks, and campus dignity.</span>
+              </div>
+            </div>
+            <div class="activity-skills-row">
+              <span class="activity-skill-chip">Deep Empathy</span>
+              <span class="activity-skill-chip">Community Consciousness</span>
+              <span class="activity-skill-chip">Humility</span>
+              <span class="activity-skill-chip">Mutual Respect</span>
+            </div>
+          </div>
+        </article>
+
+
+        <!-- 10. HEALTH, FIRST AID & SAFETY AWARENESS -->
+        <article class="activity-card" data-category="values">
+          <div class="activity-card-media">
+            <img src="assets/first aid.png" alt="Students learning first aid and health safety awareness" loading="lazy">
+          </div>
+          <div class="activity-card-body">
+            <div class="activity-card-header">
+              <span class="activity-icon-pill">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                Health &amp; Safety Awareness
+              </span>
+              <span class="activity-grade-tag">All Grades</span>
+            </div>
+            <h3>Little Health Heroes</h3>
+            <p class="activity-marathi-title">प्राथमिक उपचार, आरोग्य जागरूकता व स्वच्छता (First Aid &amp; Health)</p>
+            <p class="activity-lead">
+              Our students are trained as tiny health ambassadors! Through simple, practical demonstrations, they learn
+              the essentials of basic first aid, personal hygiene routines, dental health, and how to remain calm
+              and supportive when someone needs help.
+            </p>
+            <div class="activity-highlights">
+              <div class="activity-hl-item">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                <span><strong>Basic First Aid (प्राथमिक उपचार):</strong> Knowing how to bandage small scrapes, clean wounds, and call teachers.</span>
+              </div>
+              <div class="activity-hl-item">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                <span><strong>Hygiene Habits:</strong> Proper 7-step handwashing with soap, dental hygiene, and drinking clean filtered water.</span>
+              </div>
+            </div>
+            <div class="activity-skills-row">
+              <span class="activity-skill-chip">First Aid Basics</span>
+              <span class="activity-skill-chip">Hygiene Awareness</span>
+              <span class="activity-skill-chip">Emergency Calm</span>
+              <span class="activity-skill-chip">Responsibility</span>
+            </div>
+          </div>
+        </article>
+
+
+        <!-- 11. NUTRITIOUS MEALS & COMMUNITY DINING -->
+        <article class="activity-card" data-category="values">
+          <div class="activity-card-media">
+            <img src="assets/nutritious meal.jpeg" alt="Fresh hot nutritious mid-day meal served at school" loading="lazy">
+          </div>
+          <div class="activity-card-body">
+            <div class="activity-card-header">
+              <span class="activity-icon-pill">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" x2="6" y1="1" y2="4"/><line x1="10" x2="10" y1="1" y2="4"/><line x1="14" x2="14" y1="1" y2="4"/></svg>
+                Mid-Day Meal &amp; Fellowship
+              </span>
+              <span class="activity-grade-tag">Daily Nourishment</span>
+            </div>
+            <h3>Gratitude, Shared Meals &amp; Good Nutrition</h3>
+            <p class="activity-marathi-title">शालेय पोषण आहार व सहभोजन (Mid-Day Meal &amp; Fellowship)</p>
+            <p class="activity-lead">
+              Lunchtime is one of our most cherished daily rituals! Every afternoon, students gather in circle
+              formations, recite a peaceful meal prayer (*भोजन प्रार्थना*), and share freshly prepared hot nutritious
+              dal, rice, and garden-fresh vegetables with gratitude.
+            </p>
+            <div class="activity-highlights">
+              <div class="activity-hl-item">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                <span><strong>Fellowship (सहभोजन):</strong> Students of all backgrounds eat together as one loving family — no one eats alone.</span>
+              </div>
+              <div class="activity-hl-item">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                <span><strong>Cleanliness &amp; Etiquette:</strong> Washing hands before meals, avoiding food wastage, and cleaning eating areas.</span>
+              </div>
+            </div>
+            <div class="activity-skills-row">
+              <span class="activity-skill-chip">Gratitude</span>
+              <span class="activity-skill-chip">Equality &amp; Unity</span>
+              <span class="activity-skill-chip">Dining Etiquette</span>
+              <span class="activity-skill-chip">Healthy Nutrition</span>
+            </div>
+          </div>
+        </article>
+
+      </div>
+
+
+      <!-- INSPIRING QUOTE BANNER -->
+      <div class="extra-quote-banner" style="max-width: 1200px; margin: 60px auto 0;">
+        <div class="extra-quote-inner">
+          <p class="extra-quote-kicker" style="color: var(--school-yellow); display: inline-flex; align-items: center; gap: 8px; font-size: 11px; font-weight: 800; letter-spacing: .18em; text-transform: uppercase;">
+            <span style="width: 8px; height: 8px; border-radius: 50%; background: #ffdc79;"></span>
+            EDUCATORS’ VISION
+          </p>
+          <h3>"Every child holds a treasure of talent waiting to be loved into bloom."</h3>
+          <p>
+            At Z.P.P.S. Bhingankhalsa, we believe that sports build courage, singing unlocks joy, dancing celebrates
+            our cultural roots, crafts foster creativity, and gardening teaches reverence for nature. When a child feels
+            cherished and capable, academic excellence follows naturally.
+          </p>
+          <div style="font-size: 13px; font-weight: 700; color: #ffdc79;">
+            — Lokhande Sunita (Headmistress) &amp; Mr. Bhujbal (Teacher) · Z.P.P.S. Bhingankhalsa
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+
+    <!-- CLOSING NAVIGATION -->
+    <section class="inner-coming-soon">
+      <div class="inner-coming-soon-inner">
+        <p class="closing-eyebrow">✦ EXPLORE OUR SCHOOL ✦</p>
+        <h2>Discover What Makes Our School Special</h2>
+        <p class="closing-description">
+          Learn more about our school community, campus facilities, and daily learning journey.
+        </p>
+        <div style="display: flex; gap: 14px; justify-content: center; flex-wrap: wrap;">
+          <a href="features.html" class="closing-button">School Features →</a>
+          <a href="about.html" class="closing-button" style="background: transparent; color: white; border: 1px solid rgba(255,255,255,.3);">About Our School</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- FOOTER -->
+  <footer class="school-footer" id="contact">
+    <div class="footer-container">
+      <div class="footer-brand">
+        <div class="footer-brand-header">
+          <img src="assets/school-logo.png" alt="Zilla Parishad logo" class="footer-logo">
+          <h3>Z.P.P.S. Bhingankhalsa</h3>
+        </div>
+        <p>A place where little minds explore, discover, and grow with confidence.</p>
+      </div>
+
+      <nav class="footer-links" aria-label="Footer navigation">
+        <h4>Explore</h4>
+        <a href="index.html">Home</a>
+        <a href="about.html">About Our School</a>
+        <a href="extra-curriculum.html">Extra Curriculum</a>
+        <a href="calendar.html">Calendar</a>
+        <a href="features.html">Features</a>
+        <a href="faq.html">F &amp; Q</a>
+      </nav>
+
+      <div class="footer-contact">
+        <h4>Get in Touch</h4>
+        <p>Z.P.P.S. Bhingankhalsa</p>
+        <p>Village Bhingan Khalsa, Ahilyanagar, Maharashtra</p>
+        <p>School Timings: 10:00 AM – 4:00 PM</p>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© Z.P.P.S. Bhingankhalsa</p>
+      <p>Made with curiosity and care ♥</p>
+    </div>
+  </footer>
+
+</body>
+
+</html>

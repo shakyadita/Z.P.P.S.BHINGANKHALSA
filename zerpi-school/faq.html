@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Frequently Asked Questions about Z.P.P.S. Bhingankhalsa — admissions, curriculum, campus and more.">
+  <title>FAQ | Z.P.P.S. Bhingankhalsa</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="page-styles.css">
+  <link rel="stylesheet" href="voice-bot.css">
+  <script src="page-script.js" defer></script>
+  <script src="voice-bot.js" defer></script>
+
+  <style>
+    /* ---- FAQ PAGE ---- */
+
+    .faq-hero {
+      position: relative;
+      background: var(--school-navy, #082d45);
+      color: white;
+      padding: 120px 7% 80px;
+      overflow: hidden;
+    }
+
+    .faq-hero-bg {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      background:
+        radial-gradient(ellipse 60% 70% at 90% 50%, rgba(52,143,197,.25), transparent),
+        radial-gradient(ellipse 40% 60% at 5% 80%, rgba(255,220,121,.12), transparent);
+    }
+
+    .faq-hero-bg::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image: radial-gradient(rgba(255,255,255,.05) 1.5px, transparent 1.5px);
+      background-size: 28px 28px;
+    }
+
+    .faq-hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: 700px;
+    }
+
+    .faq-hero-content h1 {
+      margin: 0 0 18px;
+      font-size: clamp(38px, 5.5vw, 80px);
+      font-weight: 800;
+      line-height: 1.05;
+      letter-spacing: -.04em;
+    }
+
+    .faq-hero-content p {
+      font-size: clamp(15px, 1.3vw, 19px);
+      line-height: 1.75;
+      color: #b3d5e0;
+      margin: 0;
+    }
+
+    /* ---- FAQ SECTION ---- */
+
+    .faq-section {
+      background: #f5fbfe;
+      padding: 80px 7%;
+      color: var(--school-navy, #082d45);
+    }
+
+    .faq-container {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .faq-category {
+      margin-bottom: 60px;
+    }
+
+    .faq-category-title {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin: 0 0 28px;
+      font-size: clamp(20px, 2vw, 28px);
+      font-weight: 800;
+      color: var(--school-navy, #082d45);
+      letter-spacing: -.02em;
+    }
+
+    .faq-category-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      background: var(--school-sky, #ddf2fa);
+      display: grid;
+      place-items: center;
+      color: var(--school-blue, #348fc5);
+      flex-shrink: 0;
+    }
+
+    /* Accordion */
+    .faq-item {
+      border-bottom: 1px solid #d0e8f2;
+    }
+
+    .faq-item:first-of-type {
+      border-top: 1px solid #d0e8f2;
+    }
+
+    .faq-question {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      padding: 20px 0;
+      background: none;
+      border: none;
+      text-align: left;
+      cursor: pointer;
+      font-family: inherit;
+      font-size: clamp(15px, 1.3vw, 17px);
+      font-weight: 700;
+      color: var(--school-navy, #082d45);
+      gap: 16px;
+      transition: color .2s;
+    }
+
+    .faq-question:hover {
+      color: var(--school-blue, #348fc5);
+    }
+
+    .faq-chevron {
+      flex-shrink: 0;
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      background: var(--school-sky, #ddf2fa);
+      display: grid;
+      place-items: center;
+      transition: transform .3s, background .2s;
+      color: var(--school-blue, #348fc5);
+    }
+
+    .faq-item.is-open .faq-chevron {
+      transform: rotate(180deg);
+      background: var(--school-blue, #348fc5);
+      color: white;
+    }
+
+    .faq-answer {
+      overflow: hidden;
+      max-height: 0;
+      transition: max-height .35s cubic-bezier(.4,0,.2,1);
+    }
+
+    .faq-item.is-open .faq-answer {
+      max-height: 400px;
+    }
+
+    .faq-answer-inner {
+      padding: 0 0 20px;
+      font-size: clamp(14px, 1.1vw, 16px);
+      line-height: 1.8;
+      color: #385a70;
+    }
+
+    .faq-answer-inner strong {
+      color: var(--school-navy, #082d45);
+    }
+
+    /* ---- CLOSING ---- */
+
+    .faq-closing {
+      background: var(--school-navy, #082d45);
+      color: white;
+      text-align: center;
+      padding: 72px 24px;
+    }
+
+    .faq-closing h2 {
+      margin: 0 0 16px;
+      font-size: clamp(26px, 3.5vw, 48px);
+      font-weight: 800;
+      letter-spacing: -.03em;
+    }
+
+    .faq-closing p {
+      max-width: 520px;
+      margin: 0 auto 32px;
+      font-size: 17px;
+      line-height: 1.75;
+      color: #b3d5e0;
+    }
+
+    .faq-closing .closing-button {
+      background: var(--school-yellow, #ffdc79);
+      color: var(--school-navy, #082d45);
+    }
+  </style>
+</head>
+
+<body class="inner-page">
+
+  <!-- NAVBAR -->
+  <header class="page-navbar">
+    <a class="brand" href="index.html">
+      <img src="assets/school-logo.png" class="brand-logo" alt="Zilla Parishad emblem" width="60" height="60">
+      <span class="brand-name">Z.P.P.S. Bhingankhalsa</span>
+    </a>
+
+    <a class="page-back-link" href="index.html">
+      ← Back to Home
+    </a>
+
+    <!-- HAMBURGER MENU BUTTON -->
+    <button class="menu-toggle" id="menuToggle" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="siteMenu">
+      <span class="menu-bar"></span>
+      <span class="menu-bar"></span>
+      <span class="menu-bar"></span>
+    </button>
+  </header>
+
+  <!-- SLIDE-OUT NAVIGATION MENU -->
+  <nav class="site-menu" id="siteMenu" aria-label="Site navigation">
+    <div class="site-menu-inner">
+
+      <button class="site-menu-close" id="menuClose" type="button" aria-label="Close menu">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+
+      <p class="site-menu-school">Z.P.P.S. Bhingankhalsa</p>
+
+      <ul class="site-menu-list">
+        <li><a href="about.html" class="site-menu-link">About Our School</a></li>
+        <li><a href="extra-curriculum.html" class="site-menu-link">Extra Curriculum</a></li>
+        <li><a href="calendar.html" class="site-menu-link">Calendar</a></li>
+        <li><a href="features.html" class="site-menu-link">Features</a></li>
+        <li><a href="faq.html" class="site-menu-link">F &amp; Q</a></li>
+      </ul>
+
+      <div class="site-menu-footer">
+        Z.P.P.S. Bhingankhalsa<br>
+        Village Bhingan Khalsa, Maharashtra<br>
+        School Timings: 10:00 AM – 4:00 PM
+      </div>
+
+    </div>
+  </nav>
+
+  <main>
+
+    <!-- HERO -->
+    <section class="faq-hero">
+      <div class="faq-hero-bg" aria-hidden="true"></div>
+      <div class="faq-hero-content">
+        <p class="eyebrow">Common Questions</p>
+        <h1>Frequently Asked Questions</h1>
+        <p>Everything you need to know about Z.P.P.S. Bhingankhalsa — from admissions to campus life.</p>
+      </div>
+    </section>
+
+
+    <!-- FAQ CONTENT -->
+    <section class="faq-section">
+      <div class="faq-container">
+
+        <!-- CATEGORY 1: Admissions -->
+        <div class="faq-category">
+          <h2 class="faq-category-title">
+            <span class="faq-category-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            </span>
+            Admissions &amp; Enrollment
+          </h2>
+
+          <div class="faq-item">
+            <button class="faq-question" type="button" aria-expanded="false">
+              How do I enroll my child at Z.P.P.S. Bhingankhalsa?
+              <span class="faq-chevron" aria-hidden="true">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg>
+              </span>
+            </button>
+            <div class="faq-answer" role="region">
+              <div class="faq-answer-inner">
+                Enrollment is done at the school office. Parents or guardians should visit the school during working hours (10:00 AM – 4:00 PM) with the required documents. Our staff will guide you through the admission process step by step.
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" type="button" aria-expanded="false">
+              What is the age criteria for admission?
+              <span class="faq-chevron" aria-hidden="true">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg>
+              </span>
+            </button>
+            <div class="faq-answer" role="region">
+              <div class="faq-answer-inner">
+                <strong>Early Years (Balwadi/Pre-Primary):</strong> Children aged 3 to 5 years are welcome.<br>
+                <strong>Primary (Standard 1):</strong> Children must be at least 6 years old by June 15th of the admission year.<br>
+                Age certificates or birth certificates are required at the time of admission.
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" type="button" aria-expanded="false">
+              Is there a school fee?
+              <span class="faq-chevron" aria-hidden="true">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg>
+              </span>
+            </button>
+            <div class="faq-answer" role="region">
+              <div class="faq-answer-inner">
+                As a Zilla Parishad school, education at Z.P.P.S. Bhingankhalsa is provided free of cost. There are no tuition fees. The government also provides free textbooks, mid-day meals and uniforms under various schemes.
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" type="button" aria-expanded="false">
+              What documents are required for admission?
+              <span class="faq-chevron" aria-hidden="true">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg>
+              </span>
+            </button>
+            <div class="faq-answer" role="region">
+              <div class="faq-answer-inner">
+                Please bring the following documents:<br>
+                • Birth certificate of the child<br>
+                • Aadhar card of child and parent/guardian<br>
+                • Caste certificate (if applicable)<br>
+                • Previous school leaving certificate (for transfers)<br>
+                • 2 passport-size photographs<br>
+                Our school office will advise if any additional documents are needed.
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" type="button" aria-expanded="false">
+              What is the medium of instruction?
+              <span class="faq-chevron" aria-hidden="true">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg>
+              </span>
+            </button>
+            <div class="faq-answer" role="region">
+              <div class="faq-answer-inner">
+                The primary medium of instruction at Z.P.P.S. Bhingankhalsa is <strong>Marathi</strong>. English is taught as a subject from Standard 1 onwards, and children are introduced to basic English reading and writing progressively through the primary years.
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+
+        <!-- CATEGORY 2: Academic & Curriculum -->
+        <div class="faq-category">
+          <h2 class="faq-category-title">
+            <span class="faq-category-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+            </span>
+            Academic &amp; Curriculum
+          </h2>
+
+          <div class="faq-item">
+            <button class="faq-question" type="button" aria-expanded="false">
+              Which standards does the school offer?
+              <span class="faq-chevron" aria-hidden="true">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg>
+              </span>
+            </button>
+            <div class="faq-answer" role="region">
+              <div class="faq-answer-inner">
+                Z.P.P.S. Bhingankhalsa offers:<br>
+                • <strong>Early Years / Balwadi:</strong> Pre-primary education<br>
+                • <strong>Primary:</strong> Standard 1 to Standard 4<br>
+                The school follows the Maharashtra State Board curriculum as prescribed by the Zilla Parishad.
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" type="button" aria-expanded="false">
+              What are the school timings?
+              <span class="faq-chevron" aria-hidden="true">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg>
+              </span>
+            </button>
+            <div class="faq-answer" role="region">
+              <div class="faq-answer-inner">
+                School is open from <strong>10:00 AM to 4:00 PM</strong>, Monday to Saturday. The school is closed on Sundays and public holidays as per the Maharashtra government school calendar.
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" type="button" aria-expanded="false">
+              Does the school use digital tools and technology?
+              <span class="faq-chevron" aria-hidden="true">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg>
+              </span>
+            </button>
+            <div class="faq-answer" role="region">
+              <div class="faq-answer-inner">
+                Yes! We are proud to incorporate digital learning resources in our classroom. Children have access to educational videos, digital content and smart learning tools that make lessons more engaging. Our teachers are trained to blend traditional teaching with modern approaches.
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" type="button" aria-expanded="false">
+              Is mid-day meal provided?
+              <span class="faq-chevron" aria-hidden="true">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg>
+              </span>
+            </button>
+            <div class="faq-answer" role="region">
+              <div class="faq-answer-inner">
+                Yes, the school provides a nutritious mid-day meal to all students free of charge under the Government of Maharashtra's Mid-Day Meal Scheme. The meal is freshly prepared and includes rice, dal, vegetables and seasonal items, ensuring every child receives proper nourishment during the school day.
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+
+        <!-- CATEGORY 3: Campus & Safety -->
+        <div class="faq-category">
+          <h2 class="faq-category-title">
+            <span class="faq-category-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </span>
+            Campus &amp; Safety
+          </h2>
+
+          <div class="faq-item">
+            <button class="faq-question" type="button" aria-expanded="false">
+              What facilities does the school have?
+              <span class="faq-chevron" aria-hidden="true">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg>
+              </span>
+            </button>
+            <div class="faq-answer" role="region">
+              <div class="faq-answer-inner">
+                Our campus includes bright and welcoming classrooms, a dedicated playground for sports and physical activity, a school garden where children grow vegetables, a library corner, clean drinking water facilities, and separate washrooms for boys and girls. We are continuously improving our facilities for our students.
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" type="button" aria-expanded="false">
+              How does the school ensure hygiene and cleanliness?
+              <span class="faq-chevron" aria-hidden="true">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg>
+              </span>
+            </button>
+            <div class="faq-answer" role="region">
+              <div class="faq-answer-inner">
+                Hygiene is a priority at our school. Classrooms and washrooms are cleaned daily. Students are taught personal hygiene — handwashing, dental hygiene and cleanliness — as part of their daily routine. Regular health check-ups are conducted, and we work with our community to maintain a clean and healthy school environment.
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" type="button" aria-expanded="false">
+              What safety measures are in place?
+              <span class="faq-chevron" aria-hidden="true">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg>
+              </span>
+            </button>
+            <div class="faq-answer" role="region">
+              <div class="faq-answer-inner">
+                The safety of every child is our highest priority. Our school has a secure campus, and children are only released to authorised parents or guardians. Teachers are trained in child safety protocols. We have a strict no-stranger policy, and all visitors must be verified before entering the school premises.
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" type="button" aria-expanded="false">
+              What should my child bring to school?
+              <span class="faq-chevron" aria-hidden="true">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg>
+              </span>
+            </button>
+            <div class="faq-answer" role="region">
+              <div class="faq-answer-inner">
+                Children should come to school in their uniform, clean and ready to learn. Please pack:<br>
+                • A water bottle with fresh drinking water<br>
+                • Stationery (pencil, eraser, ruler)<br>
+                • School bag with books for that day<br>
+                • Any materials requested by the teacher for specific activities<br>
+                Heavy bags are discouraged — we encourage children to bring only what is needed for the day.
+              </div>
+            </div>
+          </div>
+
+
+        <!-- CATEGORY 4: Community & Events -->
+        <div class="faq-category">
+          <h2 class="faq-category-title">
+            <span class="faq-category-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            </span>
+            Community &amp; Events
+          </h2>
+
+          <div class="faq-item">
+            <button class="faq-question" type="button" aria-expanded="false">
+              Does the school organise annual events and cultural programs?
+              <span class="faq-chevron" aria-hidden="true">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg>
+              </span>
+            </button>
+            <div class="faq-answer" role="region">
+              <div class="faq-answer-inner">
+                Yes! Our <strong>Annual Gathering (स्नेहसंमेलन)</strong> is a highlight of the school year. Students perform dance, singing, Lezim, drama, and sports events. We also celebrate <strong>Republic Day, Independence Day, Shivaji Maharaj Jayanti, Maharashtra Din</strong>, and other important national and cultural occasions with enthusiasm and community pride.
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" type="button" aria-expanded="false">
+              How can parents get involved in school activities?
+              <span class="faq-chevron" aria-hidden="true">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg>
+              </span>
+            </button>
+            <div class="faq-answer" role="region">
+              <div class="faq-answer-inner">
+                We warmly welcome parent involvement! Parents can participate in <strong>School Management Committee (SMC)</strong> meetings, volunteer for events, and contribute to plantation drives and cleanliness campaigns. Regular parent-teacher meetings keep families connected with their child's progress and school life.
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" type="button" aria-expanded="false">
+              What sports and extra-curricular activities are offered?
+              <span class="faq-chevron" aria-hidden="true">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg>
+              </span>
+            </button>
+            <div class="faq-answer" role="region">
+              <div class="faq-answer-inner">
+                Our students thrive beyond the classroom! We offer <strong>sports</strong> (Kabaddi, Kho-Kho, athletics), <strong>singing and music</strong> (morning assembly, patriotic songs), <strong>folk dance and Lezim</strong>, <strong>art and craft-making</strong>, <strong>eco-gardening</strong>, self-directed <strong>reading and digital learning</strong>, and compassionate community values. These are not extra — they are the heart of our school.
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" type="button" aria-expanded="false">
+              Is the school connected to the local village community?
+              <span class="faq-chevron" aria-hidden="true">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg>
+              </span>
+            </button>
+            <div class="faq-answer" role="region">
+              <div class="faq-answer-inner">
+                Absolutely. Z.P.P.S. Bhingankhalsa is deeply rooted in the Bhingan Khalsa village community. Our school events — especially the Annual Gathering — bring together the entire village. We conduct tree plantation drives, cleanliness campaigns, and awareness programs that connect our school to our community's wellbeing.
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" type="button" aria-expanded="false">
+              How does the school celebrate student achievements?
+              <span class="faq-chevron" aria-hidden="true">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg>
+              </span>
+            </button>
+            <div class="faq-answer" role="region">
+              <div class="faq-answer-inner">
+                Every child's achievement matters here! We celebrate through <strong>merit recognition in morning assembly</strong>, performance opportunities at school events, and showcasing student artwork and projects on our school notice board. We believe every child has a unique talent worth celebrating — whether in sports, singing, academics, gardening, or kindness.
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- CLOSING -->
+    <section class="faq-closing">
+      <h2>Still Have Questions?</h2>
+      <p>
+        Please visit us during school hours and our staff will be happy to help you.
+        We welcome every parent and community member.
+      </p>
+      <a href="index.html" class="closing-button">
+        Back to Home <span aria-hidden="true">→</span>
+      </a>
+    </section>
+
+  </main>
+
+
+  <!-- FOOTER -->
+  <footer class="school-footer" id="contact">
+
+    <div class="footer-container">
+
+      <div class="footer-brand">
+        <div class="footer-brand-header">
+          <img src="assets/school-logo.png" alt="Zilla Parishad logo" class="footer-logo">
+          <h3>Z.P.P.S. Bhingankhalsa</h3>
+        </div>
+        <p>A place where little minds explore, discover, and grow with confidence.</p>
+      </div>
+
+      <nav class="footer-links" aria-label="Footer navigation">
+        <h4>Explore</h4>
+        <a href="index.html">Home</a>
+        <a href="early-years.html">Early Years</a>
+        <a href="primary.html">Primary</a>
+        <a href="faq.html">FAQ</a>
+      </nav>
+
+      <div class="footer-contact">
+        <h4>Get in Touch</h4>
+        <p>Z.P.P.S. Bhingankhalsa</p>
+        <p>Village Bhingan Khalsa, Maharashtra</p>
+        <p>School Timings: 10:00 AM – 4:00 PM</p>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <p>© Z.P.P.S. Bhingankhalsa</p>
+      <p>Made with curiosity and care 🌟</p>
+    </div>
+
+  </footer>
+
+  <script>
+    // FAQ Accordion
+    document.querySelectorAll('.faq-question').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        var item = btn.closest('.faq-item');
+        var isOpen = item.classList.contains('is-open');
+
+        // Close all
+        document.querySelectorAll('.faq-item.is-open').forEach(function(openItem) {
+          openItem.classList.remove('is-open');
+          openItem.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+        });
+
+        // Open clicked if it was closed
+        if (!isOpen) {
+          item.classList.add('is-open');
+          btn.setAttribute('aria-expanded', 'true');
+        }
+      });
+    });
+  </script>
+
+</body>
+
+</html>
