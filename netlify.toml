@@ -1,0 +1,8 @@
+# Netlify Configuration for Z.P.P.S. Bhingankhalsa Website
+[build]
+  publish = "zerpi-school"
+
+[[edge_functions]]
+  path = "/api/school-info"
+  function = "school-info"
+  cache = "manual"
