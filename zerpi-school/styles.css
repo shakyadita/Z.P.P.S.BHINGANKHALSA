@@ -247,8 +247,8 @@ summary:focus-visible {
 .school-intro {
   position: relative;
   overflow: hidden;
-  min-height: 100svh;
-  padding: 0 6%;
+  min-height: auto;
+  padding: 0 6% 25px;
   background: var(--school-light);
   color: var(--school-navy);
   border-top: 12px solid #cbeaf6;
@@ -342,8 +342,8 @@ summary:focus-visible {
   grid-template-columns: 1.08fr .92fr;
   align-items: center;
   gap: clamp(40px, 5vw, 90px);
-  padding: clamp(70px,8vw,115px) 0
-           clamp(64px,6vw,90px);
+  padding: clamp(55px, 6vw, 90px) 0
+           clamp(40px, 5vw, 65px);
 }
 
 .intro-small {
@@ -537,7 +537,7 @@ summary:focus-visible {
   display: grid;
   grid-template-columns: 1fr 3fr;
   gap: 25px;
-  padding: 35px 0 62px;
+  padding: 30px 0 38px;
   border-top: 1px solid #d4e7f1;
 }
 
